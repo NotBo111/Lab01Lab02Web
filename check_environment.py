@@ -6,3 +6,4 @@ print(sys.version)
 
 print("\nInterpreter:")
 print(sys.executable)
+

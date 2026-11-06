@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteka</title>
+    <label for="publish-date">Data wydania:</label>
+
+    <input
+    type="date"
+    id="publish-date"
+    name="publish_date"
+    >
+  <label for="email">E-mail:</label>
+
+    <input
+        type="email"
+        id="email"
+        name="email"
+        required
+    >
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -18,6 +34,7 @@
             <a href="#about">O bibliotece</a>
             <a href="#books">Książki</a>
             <a href="#rules">Jak wypożyczyć?</a>
+            <a href="add_book.html">Dodaj książkę</a>
         </nav>
     </header>
 
@@ -39,93 +56,150 @@
             </p>
 
             <img
-                src="https://imgs.search.brave.com/gmJYfqfunokgAHHLpVjvtD6HUBRjbD8M5B9MTPE1rQQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvOTYz/NzkyMjAvcGhvdG8v/b3Blbi1ib29rLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1p/WDY1aklYMVEtWVR2/MEJkY2phcTY3SlBN/MFZBYllhN2dxMmxT/cGVoblFNPQ"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpsiLqJ4QhJerVbRxe2dFolDsvWruFdB9j3vDH6qpw2w&s=10"
                 alt="Ikona książki"
                 width="120"
             >
         </section>
+        <form  class="search-form" method="get">
 
+            <div>
+                <label for="query">
+                    Tytuł lub autor:
+                </label>
+
+                <input
+                    type="text"
+                    id="query"
+                    name="query"
+                    placeholder="np. Solaris"
+                >
+            </div>
+
+            <div>
+                <label for="search-category">
+                    Kategoria:
+                </label>
+
+                <select
+                    id="search-category"
+                    name="category"
+                >
+                    <option value="">
+                        Wszystkie
+                    </option>
+
+                    <option value="fantasy">
+                        Fantasy
+                    </option>
+
+                    <option value="science-fiction">
+                        Science fiction
+                    </option>
+
+                    <option value="crime">
+                        Kryminał
+                    </option>
+                </select>
+            </div>
+
+            <button type="submit">
+                Szukaj
+            </button>
+            <div>
+                <label for="isbn">
+                    ISBN:
+                </label>
+
+                <input
+                    type="text"
+                    id="isbn"
+                    name="isbn"
+                    placeholder="np. 978-83-..."
+                >
+            </div>
+        </form>
         <section id="books">
             <h2>Polecane książki</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tytuł</th>
+                            <th>Autor</th>
+                            <th>Rok</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Solaris</td>
+                            <td>Stanisław Lem</td>
+                            <td>1961</td>
+                        </tr>
+                        <tr>
+                            <td>Lalka</td>
+                            <td>Bolesław Prus</td>
+                            <td>1890</td>
+                        </tr>
+                        <tr>
+                            <td>Hobbit</td>
+                            <td>J.R.R. Tolkien</td>
+                            <td>1937</td>
+                        </tr>
+                        <tr>
+                            <td>Mały Książę</td>
+                            <td>Antoine de Saint-Exupéry</td>
+                            <td>1943</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="book-list">
+                <article class="book-card">
+                    <h3>Solaris</h3>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tytuł</th>
-                        <th>Autor</th>
-                        <th>Rok</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Solaris</td>
-                        <td>Stanisław Lem</td>
-                        <td>1961</td>
-                    </tr>
-                    <tr>
-                        <td>Lalka</td>
-                        <td>Bolesław Prus</td>
-                        <td>1890</td>
-                    </tr>
-                    <tr>
-                        <td>Hobbit</td>
-                        <td>J.R.R. Tolkien</td>
-                        <td>1937</td>
-                    </tr>
-                    <tr>
-                        <td>Mały Książę</td>
-                        <td>Antoine de Saint-Exupéry</td>
-                        <td>1943</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <div class="book-info">
+                        <p>
+                            <strong>Autor:</strong> Stanisław Lem
+                        </p>
 
-            <article>
-                <h3>Solaris</h3>
+                        <p>
+                            <strong>Rok wydania:</strong> 1961
+                        </p>
+                    </div>
 
-                <div class="book-info">
                     <p>
-                        <strong>Autor:</strong> Stanisław Lem
+                        Powieść science fiction opowiadająca o próbie
+                        kontaktu człowieka z obcą formą inteligencji.
+                    </p>
+                </article>
+
+                <article class="book-card">
+                    <h3>Lalka</h3>
+
+                    <p>
+                        <strong>Autor:</strong> Bolesław Prus
                     </p>
 
                     <p>
-                        <strong>Rok wydania:</strong> 1961
+                        Powieść przedstawiająca historię Stanisława
+                        Wokulskiego oraz społeczeństwo XIX-wiecznej Warszawy.
                     </p>
-                </div>
+                </article>
 
-                <p>
-                    Powieść science fiction opowiadająca o próbie
-                    kontaktu człowieka z obcą formą inteligencji.
-                </p>
-            </article>
+                <article class="book-card">
+                    <h3>Hobbit</h3>
 
-            <article>
-                <h3>Lalka</h3>
+                    <p>
+                        <strong>Autor:</strong> J.R.R. Tolkien
+                    </p>
 
-                <p>
-                    <strong>Autor:</strong> Bolesław Prus
-                </p>
-
-                <p>
-                    Powieść przedstawiająca historię Stanisława
-                    Wokulskiego oraz społeczeństwo XIX-wiecznej Warszawy.
-                </p>
-            </article>
-
-            <article>
-                <h3>Hobbit</h3>
-
-                <p>
-                    <strong>Autor:</strong> J.R.R. Tolkien
-                </p>
-
-                <p>
-                    Historia wyprawy Bilba Bagginsa, który opuszcza
-                    spokojny dom i wyrusza w niebezpieczną podróż.
-                </p>
-            </article>
-
-            <article>
+                    <p>
+                        Historia wyprawy Bilba Bagginsa, który opuszcza
+                        spokojny dom i wyrusza w niebezpieczną podróż.
+                    </p>
+                </article>
+                <article class="book-card">
                 <h3>Mały Książę</h3>
 
                 <div class="book-info">
@@ -138,12 +212,15 @@
                     </p>
                 </div>
 
-                <p>
-                    Opowieść o podróży Małego Księcia i jego spotkaniach
-                    z mieszkańcami różnych planet.
-                </p>
-            </article>
+                    <p>
+                        Opowieść o podróży Małego Księcia i jego spotkaniach
+                        z mieszkańcami różnych planet.
+                    </p>
+                </article>
+            </div>
         </section>
+
+        
 
         <section id="rules">
             <h2>Jak wypożyczyć książkę?</h2>
